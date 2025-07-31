@@ -40,12 +40,10 @@ const Navbar = () => {
         height: heroHeight,
       }}
     >
-      {/* --- ALTERAÇÃO: Gradiente com tons mais escuros para maior contraste --- */}
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-blue-700 to-cyan-600">
         <DustParticle id="hero-particles" particles={50} particleMinSize={2} particleMaxSize={5} />
       </div>
 
-      {/* --- NAVBAR MANTIDA COM O ESTILO ORIGINAL --- */}
       <nav
         className={`absolute top-0 left-0 w-full z-20 transition-all duration-300 ${
           isDesktop
@@ -116,7 +114,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Conteúdo do HERO sobre o novo fundo escurecido */}
       <div className="relative z-10 w-full px-4 pt-16">
         {location.pathname === "/" ? (
           <HeroBanner />
