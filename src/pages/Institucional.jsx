@@ -9,13 +9,6 @@ const Institucional = () => {
     setTitle('INSTITUCIONAL');
   }, [setTitle]);
 
-  const stats = [
-    { icon: <Users className="w-8 h-8 text-blue-500" />, number: "15+", label: "Pesquisadores" },
-    { icon: <BookOpen className="w-8 h-8 text-blue-500" />, number: "25+", label: "Projetos Ativos" },
-    { icon: <Award className="w-8 h-8 text-blue-500" />, number: "50+", label: "Publicações" },
-    { icon: <Globe className="w-8 h-8 text-blue-500" />, number: "10+", label: "Parcerias" }
-  ];
-
   const team = [
     {
       name: "Dr. João Silva",
@@ -35,8 +28,7 @@ const Institucional = () => {
   ];
 
   return (
-    <div className="pt-32">
-      {/* Mission Section */}
+    <div>
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -105,34 +97,6 @@ const Institucional = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Números que Falam por Si
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex justify-center mb-4">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -171,4 +135,3 @@ const Institucional = () => {
 };
 
 export default Institucional;
-
