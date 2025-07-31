@@ -98,7 +98,8 @@ const Projetos = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <div className="pt-32">
+    // <<< MUDANÇA: Removido o "pt-32" para eliminar o espaço em branco >>>
+    <div>
       {/* Header Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -194,27 +195,25 @@ const Projetos = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-700 to-cyan-600">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 className="text-4xl font-bold text-white mb-6">
-      Tem uma Ideia de Projeto?
-    </h2>
-    <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-      Estamos sempre abertos a novas colaborações e parcerias. 
-      Entre em contato para discutir seu projeto conosco.
-    </p>
-    <Button 
-      size="lg" 
-      variant="secondary"
-      className="bg-white text-blue-600 hover:bg-gray-100"
-    >
-      Propor Colaboração
-      {/* <ExternalLink className="ml-2 w-5 h-5" /> */}
-    </Button>
-  </div>
-</section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Tem uma Ideia de Projeto?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Estamos sempre abertos a novas colaborações e parcerias. 
+            Entre em contato para discutir seu projeto conosco.
+          </p>
+          <Button 
+            size="lg" 
+            variant="secondary"
+            className="bg-white text-blue-600 hover:bg-gray-100"
+          >
+            Propor Colaboração
+          </Button>
+        </div>
+      </section>
     </div>
   );
 };
 
 export default Projetos;
-
