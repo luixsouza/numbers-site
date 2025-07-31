@@ -51,14 +51,23 @@ const Navbar = () => {
             : "bg-gray-900/95 backdrop-blur-md"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-8 sm:px-16 lg:px-24">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <img
-                src="/images/numbers_logo_full.png"
-                alt="Numbers Logo"
-                className="h-10 w-auto"
-              />
+            <div className="flex items-center gap-4">
+              <Link to="/">
+                <img
+                  src="/images/numbers_logo_full.png"
+                  alt="Numbers Logo"
+                  className="h-12 w-auto"
+                />
+              </Link>
+              <a href="https://www.ifg.edu.br/inhumas" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/ifg_logo.svg"
+                  alt="IFG Logo"
+                  className="h-12 w-auto"
+                />
+              </a>
             </div>
             {isDesktop ? (
               <div className="hidden md:block">
