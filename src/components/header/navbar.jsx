@@ -31,6 +31,14 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", updateMedia)
   }, [updateDesktop])
 
+  useEffect(() => {
+    if (title) {
+      document.title = `NumbERS - ${title}`;
+    } else {
+      document.title = 'NumbERS - Núcleo de Pesquisa';
+    }
+  }, [title]);
+
   const heroHeight = isDesktop ? '450px' : '300px';
 
   return (

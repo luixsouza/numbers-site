@@ -32,7 +32,6 @@ const Home = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      {/* About Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-cyan-50/30"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -60,8 +59,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Stats Section */}
       <section className="bg-gradient-to-r from-blue-700 to-cyan-600 relative overflow-hidden py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-12 md:mb-16">
@@ -72,26 +69,19 @@ const Home = () => {
               Nosso compromisso com a excelência se reflete em cada projeto e parceria.
             </p>
           </div>
-          
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 hover:bg-white/20 transition-all duration-300 hover-lift h-full">
                   <div className="flex justify-center mb-4 text-white group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-blue-100 font-medium text-sm md:text-base">
-                    {stat.label}
-                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-blue-100 font-medium text-sm md:text-base">{stat.label}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-transparent to-cyan-50/20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
@@ -102,19 +92,6 @@ const Home = () => {
               <Link to="/projetos"><Button size="lg" className="numbers-bg-primary hover:bg-blue-600 text-white shadow-lg hover-lift transition-all duration-300 px-8 py-4 text-lg">Ver Projetos<ArrowRight className="ml-2 w-5 h-5" /></Button></Link>
               <Link to="/institucional"><Button size="lg" variant="outline" className="border-2 border-gray-300 hover:border-blue-400 hover:text-blue-600 transition-all duration-300 px-8 py-4 text-lg">Saiba Mais Sobre Nós</Button></Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-20 bg-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h2 className="text-4xl font-bold text-white mb-6">Vamos Colaborar?</h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">Interessado em colaborar ou saber mais sobre nossos projetos? Estamos sempre abertos a novas parcerias e oportunidades de pesquisa.</p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="numbers-bg-primary hover:bg-blue-600 text-white shadow-lg hover-lift transition-all duration-300 px-8 py-4">Fale Conosco<ArrowRight className="ml-2 w-5 h-5" /></Button>
-            <Button size="lg" variant="outline" className="border-2 border-gray-600 text-gray-300 hover:border-blue-400 hover:text-blue-400 hover:bg-blue-400/10 transition-all duration-300 px-8 py-4">Ver Oportunidades</Button>
           </div>
         </div>
       </section>
