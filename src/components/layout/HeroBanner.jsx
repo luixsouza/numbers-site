@@ -6,12 +6,12 @@ const HeroBanner = () => {
       <img
         src="/images/numbers_logo_full_white.png"
         alt="Numbers Logo"
-        className="h-24 md:h-28 w-auto"
+        className="h-16 md:h-28 w-auto"
       />
       <img
         src="/images/ifg_text.svg"
         alt="IFG Logo"
-        className="h-24 md:h-28 w-auto"
+        className="h-16 md:h-28 w-auto"
       />
     </div>
   );
