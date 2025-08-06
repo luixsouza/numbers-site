@@ -1,6 +1,68 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import useEmblaCarousel from 'embla-carousel-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import useTitleStore from '@/lib/stores/title-store';
+
+const TeamCarousel = ({ team }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    slidesToScroll: 1,
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex -ml-4">
+          {team.map((member, index) => (
+            <div key={index} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] pl-4">
+              <div className="text-center bg-gray-50 p-8 rounded-2xl h-full flex flex-col items-center transition-all duration-300">
+                <div className="w-36 h-36 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden bg-gray-200">
+                  <img 
+                    src={member.photoUrl}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-blue-600 font-medium mb-4">
+                  {member.role}
+                </p>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {member.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <button
+        className="absolute top-1/2 -left-4 md:-left-5 -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-1.5 shadow-md border border-gray-200 transition-all duration-300 opacity-0 group-hover:opacity-100"
+        onClick={scrollPrev}
+      >
+        <ChevronLeft className="h-5 w-5 text-gray-700" />
+      </button>
+      <button
+        className="absolute top-1/2 -right-4 md:-right-5 -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-1.5 shadow-md border border-gray-200 transition-all duration-300 opacity-0 group-hover:opacity-100"
+        onClick={scrollNext}
+      >
+        <ChevronRight className="h-5 w-5 text-gray-700" />
+      </button>
+    </div>
+  );
+};
 
 const Institucional = () => {
   const { setTitle } = useTitleStore();
@@ -9,10 +71,14 @@ const Institucional = () => {
     setTitle('INSTITUCIONAL');
   }, [setTitle]);
 
+  // ALTERAR AQUI: Adicionar os membros/roles e as URLs das fotos
   const team = [
-    { name: "Dr. João Silva", role: "Coordenador Geral", description: "Especialista em Inteligência Artificial e Machine Learning" },
-    { name: "Dra. Maria Santos", role: "Coordenadora de Pesquisa", description: "Doutora em Ciência da Computação com foco em IoT" },
-    { name: "Dr. Carlos Oliveira", role: "Coordenador de Inovação", description: "Especialista em Transferência de Tecnologia" }
+    { name: "Dr. João Silva", role: "Coordenador Geral", description: "Especialista em Inteligência Artificial e Machine Learning", photoUrl: "/images/numbers_logo.png" },
+    { name: "Dra. Maria Santos", role: "Coordenadora de Pesquisa", description: "Doutora em Ciência da Computação com foco em IoT", photoUrl: "/images/numbers_logo.png" },
+    { name: "Dr. Carlos Oliveira", role: "Coordenador de Inovação", description: "Especialista em Transferência de Tecnologia", photoUrl: "/images/numbers_logo.png" },
+    { name: "Dr. Pedro Almeida", role: "Pesquisador Sênior", description: "Foco em Ciência de Dados e Big Data Analytics", photoUrl: "/images/numbers_logo.png" },
+    { name: "Dra. Ana Costa", role: "Pesquisadora Plena", description: "Especialista em Desenvolvimento de Software e Sistemas Distribuídos", photoUrl: "/images/numbers_logo.png" },
+    { name: "Dr. Lucas Martins", role: "Pesquisador Associado", description: "Desenvolvimento de sistemas embarcados e automação", photoUrl: "/images/numbers_logo.png" },
   ];
 
   return (
@@ -22,7 +88,7 @@ const Institucional = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      <section className="py-20 bg-white">
+      <section className="pt-20 pb-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Nossa Missão</h2>
@@ -52,22 +118,16 @@ const Institucional = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <section className="pt-10 pb-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 group">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Nossa Equipe</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">Conheça os líderes que dirigem nossas pesquisas e inovações.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="text-center bg-gray-50 p-6 rounded-lg">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full mx-auto mb-4 flex items-center justify-center"><span className="text-white font-bold text-2xl">{member.name.split(' ').map(n => n[0]).join('')}</span></div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-blue-600 font-medium mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm">{member.description}</p>
-              </div>
-            ))}
-          </div>
+          
+          <TeamCarousel team={team} />
+
         </div>
       </section>
     </motion.div>
