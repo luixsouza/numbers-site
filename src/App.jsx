@@ -4,11 +4,20 @@ import { AnimatePresence } from 'framer-motion';
 
 import ScrollToTop from './components/utils/ScrollToTop';
 import Navbar from './components/header/navbar';
+import PageHeader from './components/header/PageHeader';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Institucional from './pages/Institucional';
 import Projetos from './pages/Projetos';
+import Start from './pages/Start';
 import './App.css';
+
+const WithHeaderLayout = ({ children }) => (
+  <>
+    <PageHeader />
+    {children}
+  </>
+);
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -19,9 +28,10 @@ function AnimatedRoutes() {
       <main className="flex-grow">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/institucional" element={<Institucional />} />
-            <Route path="/projetos" element={<Projetos />} />
+            <Route path="/" element={<WithHeaderLayout><Home /></WithHeaderLayout>} />
+            <Route path="/institucional" element={<WithHeaderLayout><Institucional /></WithHeaderLayout>} />
+            <Route path="/projetos" element={<WithHeaderLayout><Projetos /></WithHeaderLayout>} />
+            <Route path="/start" element={<Start />} />
           </Routes>
         </AnimatePresence>
       </main>
