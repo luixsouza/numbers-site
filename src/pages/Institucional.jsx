@@ -73,12 +73,12 @@ const Institucional = () => {
 
   // ALTERAR AQUI: Adicionar os membros/roles e as URLs das fotos
   const team = [
-    { name: "Dr. João Silva", role: "Coordenador Geral", description: "Especialista em Inteligência Artificial e Machine Learning", photoUrl: "/images/numbers_logo.png" },
-    { name: "Dra. Maria Santos", role: "Coordenadora de Pesquisa", description: "Doutora em Ciência da Computação com foco em IoT", photoUrl: "/images/numbers_logo.png" },
-    { name: "Dr. Carlos Oliveira", role: "Coordenador de Inovação", description: "Especialista em Transferência de Tecnologia", photoUrl: "/images/numbers_logo.png" },
-    { name: "Dr. Pedro Almeida", role: "Pesquisador Sênior", description: "Foco em Ciência de Dados e Big Data Analytics", photoUrl: "/images/numbers_logo.png" },
-    { name: "Dra. Ana Costa", role: "Pesquisadora Plena", description: "Especialista em Desenvolvimento de Software e Sistemas Distribuídos", photoUrl: "/images/numbers_logo.png" },
-    { name: "Dr. Lucas Martins", role: "Pesquisador Associado", description: "Desenvolvimento de sistemas embarcados e automação", photoUrl: "/images/numbers_logo.png" },
+  { name: "Nome do Membro", role: "Cargo", description: "Descrição genérica do membro", photoUrl: "/images/numbers_logo.png" },
+  { name: "Nome do Membro", role: "Cargo", description: "Descrição genérica do membro", photoUrl: "/images/numbers_logo.png" },
+  { name: "Nome do Membro", role: "Cargo", description: "Descrição genérica do membro", photoUrl: "/images/numbers_logo.png" },
+  { name: "Nome do Membro", role: "Cargo", description: "Descrição genérica do membro", photoUrl: "/images/numbers_logo.png" },
+  { name: "Nome do Membro", role: "Cargo", description: "Descrição genérica do membro", photoUrl: "/images/numbers_logo.png" },
+  { name: "Nome do Membro", role: "Cargo", description: "Descrição genérica do membro", photoUrl: "/images/numbers_logo.png" },
   ];
 
   return (
