@@ -10,10 +10,10 @@ const Start = () => {
   }, []);
 
   const cities = [
-    "Alto Paraíso de Goiás", "Anápolis", "Aparecida de Goiânia", "Aruanã", "Catalão", "Cristalina", "Goiânia (4 laboratórios)", "Itaberaí", "Itumbiara", "Jataí", "Luziânia", "Mambaí", "Mozarlândia", "Pirenópolis", "Porangatu", "Rio Verde", "Santo Antônio do Descoberto", "São Luís de Montes Belos", "São Miguel do Araguaia", "Trindade", "Uruana", "Valparaíso de Goiás"
+    "Alto Paraíso de Goiás", "Anápolis", "Aparecida de Goiânia", "Aruanã", "Catalão", "Caldas Novas", "Cristalina", "Goiânia (4 laboratórios)", "Itaberaí", "Itumbiara", "Jataí", "Luziânia", "Mambaí", "Mozarlândia", "Pirenópolis", "Porangatu", "Rio Verde", "Santo Antônio do Descoberto", "São Luís de Montes Belos", "São Miguel do Araguaia", "Trindade", "Uruana", "Valparaíso de Goiás"
   ];
   
-  const headerImage = activeTab === 'dados' 
+  const headerImage = activeTab === 'dados'
     ? { src: '/images/Start_dados.jpg', alt: 'Logo do START em Dados', placeholder: 'https://placehold.co/400x320/ffffff/000000?text=START+Dados' }
     : { src: '/images/Logo-START.png', alt: 'Logo do Programa START', placeholder: 'https://placehold.co/400x320/e0e0e0/666?text=Logo+START' };
 
@@ -32,7 +32,7 @@ const Start = () => {
               src={headerImage.src}
               alt={headerImage.alt}
               className="w-auto h-48 sm:h-56 md:h-80 mx-auto"
-              onError={(e) => { e.target.onerror = null; e.target.src=headerImage.placeholder; }}
+              onError={(e) => { e.target.onerror = null; e.target.src = headerImage.placeholder; }}
             />
           </div>
 
@@ -87,7 +87,7 @@ const Start = () => {
                   <p className="text-gray-700 leading-relaxed mb-4">
                     Por meio do aprendizado de robótica, linguagens de programação, dispositivos de realidade virtual e aumentada, impressão 3D e inteligência artificial; os participantes desenvolvem soluções inovadoras e tecnológicas para desafios reais de suas comunidades.
                   </p>
-                   <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     Proposto e coordenado pelo professor do IFG Leandro Alexandre Freitas, o Programa START é fruto de mais de dois anos de diálogo do IFG com a Secretaria de Desenvolvimento e Inovação do Estado de Goiás (SECTI). O programa prevê o trabalho ativo na disseminação do ensino de robótica e no desenvolvimento de software, com previsão de 3.808 vagas ofertadas.
                   </p>
                 </div>
@@ -111,7 +111,7 @@ const Start = () => {
                         <p className="text-gray-600 text-sm">50% das vagas são reservadas para meninas.</p>
                       </div>
                     </div>
-                     <div className="flex items-start">
+                    <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Cursos Gratuitos!</h4>
@@ -146,47 +146,54 @@ const Start = () => {
                     ))}
                   </ul>
                 </div>
-                <img src="/images/MapaSTART.png" alt="Mapa das unidades do programa START em Goiás" className="w-full max-w-4xl mx-auto rounded-lg shadow-lg border border-gray-200" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/1024x576/e0e0e0/666?text=Mapa+Unidades'; }} />
+                <img src="/images/Mapa-START.jpg" alt="Mapa das unidades do programa START em Goiás" className="w-full max-w-6xl mx-auto rounded-lg shadow-lg border border-gray-200" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/1024x576/e0e0e0/666?text=Mapa+Unidades'; }} />
               </motion.div>
             )}
 
             {activeTab === 'dados' && (
-                <motion.div
-                  key="dados"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <div className="text-center mb-12">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Dashboard Interativo</h3>
-                    <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-                      Explore os dados do programa S.T.A.R.T. através do nosso painel interativo do Power BI.
-                    </p>
-                  </div>
-                  <div className="flex justify-center">
-                    <iframe 
-                      title="Dashboard_v2" 
-                      src="https://app.powerbi.com/view?r=eyJrIjoiMTZlODNmODUtMzY3My00NmE3LWFlZWUtZmE1OGE1NTU1NmFmIiwidCI6ImI0YjBlM2VhLTMwZjgtNGM0Yy05MmYwLWQ2MWM1ZjIyOWZjNyJ9" 
-                      frameBorder="0" 
-                      allowFullScreen={true}
-                      className="rounded-lg shadow-lg border border-gray-200 w-full h-[450px] md:h-[800px]"
-                    ></iframe>
-                  </div>
-                </motion.div>
+              <motion.div
+                key="dados"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className="text-center mb-12">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Dashboard Interativo</h3>
+                  <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                    Explore os dados do programa S.T.A.R.T. através do nosso painel interativo do Power BI.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <iframe
+                    title="Dashboard_v2"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiZGM1YWRkMTMtMjU4Mi00MGJjLThkZGYtZTgxYzk4MGMwM2EzIiwidCI6ImI0YjBlM2VhLTMwZjgtNGM0Yy05MmYwLWQ2MWM1ZjIyOWZjNyJ9"
+                    frameBorder="0"
+                    allowFullScreen={true}
+                    className="rounded-lg shadow-lg border border-gray-200 w-full h-[3000px] md:h-[3750px]"
+                  ></iframe>
+                </div>
+              </motion.div>
             )}
           </div>
-
         </div>
       </section>
-
-      <section className="bg-white py-12 md:py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <a href="https://goias.gov.br/inovacao/start/" target="_blank" rel="noopener noreferrer" className="block hover:opacity-90 transition-opacity">
+      <section className="bg-white py-16 md:py-20 -mt-6">
+        <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-16">
+          <a
+            href="https://goias.gov.br/inovacao/start/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
             <img
               src="/images/Banner-IFG-START.png"
               alt="Banner de parceria entre IFG e o programa START"
-              className="w-full h-auto rounded-xl shadow-lg"
-              onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/1024x200/e0e0e0/666?text=Banner+Parceria'; }}
+              className="w-full h-auto bg-white rounded-2xl"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src =
+                  'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="380"><rect width="100%" height="100%" fill="white"/></svg>';
+              }}
             />
           </a>
         </div>
