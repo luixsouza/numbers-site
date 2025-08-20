@@ -100,7 +100,7 @@ const Start = () => {
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-gray-800">Crianças e jovens de 8 a 20 anos</h4>
+                        <h4 className="font-semibold text-gray-800">Crianças e jovens de 8 a 20 anos*</h4>
                         <p className="text-gray-600 text-sm">Em situação de vulnerabilidade.</p>
                       </div>
                     </div>
