@@ -88,7 +88,7 @@ const Start = () => {
                     Por meio do aprendizado de robótica, linguagens de programação, dispositivos de realidade virtual e aumentada, impressão 3D e inteligência artificial; os participantes desenvolvem soluções inovadoras e tecnológicas para desafios reais de suas comunidades.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    Proposto e coordenado pelo professor do IFG Leandro Alexandre Freitas, o Programa START é fruto de mais de dois anos de diálogo do IFG com a Secretaria de Desenvolvimento e Inovação do Estado de Goiás (SECTI). O programa prevê o trabalho ativo na disseminação do ensino de robótica e no desenvolvimento de software, com previsão de 3.808 vagas ofertadas.
+                    Proposto e coordenado pelo professor do IFG Leandro Alexandre Freitas, o Programa START é fruto de mais de dois anos de diálogo do IFG com a Secretaria de Estado de Ciência, Tecnologia e Inovação (SECTI). O programa prevê o trabalho ativo na disseminação do ensino de robótica e no desenvolvimento de software, com previsão de 3.808 vagas ofertadas.
                   </p>
                 </div>
                 <div className="bg-blue-50 p-6 md:p-8 rounded-2xl">
@@ -101,7 +101,7 @@ const Start = () => {
                       <CheckCircle className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Crianças e jovens de 8 a 20 anos</h4>
-                        <p className="text-gray-600 text-sm">Em situação de baixa renda.</p>
+                        <p className="text-gray-600 text-sm">Em situação de vulnerabilidade.</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -169,7 +169,7 @@ const Start = () => {
                     src="https://app.powerbi.com/view?r=eyJrIjoiZGM1YWRkMTMtMjU4Mi00MGJjLThkZGYtZTgxYzk4MGMwM2EzIiwidCI6ImI0YjBlM2VhLTMwZjgtNGM0Yy05MmYwLWQ2MWM1ZjIyOWZjNyJ9"
                     frameBorder="0"
                     allowFullScreen={true}
-                    className="rounded-lg shadow-lg border border-gray-200 w-full h-[3000px] md:h-[3750px]"
+                    className="rounded-lg shadow-lg border border-gray-200 w-full h-[3000px] md:h-[3600px]"
                   ></iframe>
                 </div>
               </motion.div>
