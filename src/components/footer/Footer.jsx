@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Github, Youtube, Instagram, Facebook } from 'lucide-react';
+import { Mail, MapPin, Github, Youtube, Instagram, Facebook } from 'lucide-react';
 
 const Footer = () => {
   const handleScrollToTop = () => {
@@ -16,41 +16,41 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Link to="/" onClick={handleScrollToTop}>
-              <img 
-                src="/images/numbers_logo_full_white.png" 
+              <img
+                src="/images/numbers_logo_full_white.png"
                 alt="NumbERS Logo"
                 className="h-12 w-auto mb-4"
               />
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
-              Promovendo a pesquisa científica e tecnológica de excelência, 
+              Promovendo a pesquisa científica e tecnológica de excelência,
               desenvolvendo soluções inovadoras para o futuro.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://github.com/nmbrslab" 
-                target="_blank" rel="noopener noreferrer" 
+              <a
+                href="https://github.com/nmbrslab"
+                target="_blank" rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
-              <a 
+              <a
                 href="https://www.youtube.com/channel/UCLVNnBRspchis0sKevtqtJg"
-                target="_blank" rel="noopener noreferrer" 
+                target="_blank" rel="noopener noreferrer"
                 className="text-gray-400 hover:text-red-500 transition-colors"
               >
                 <Youtube className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.instagram.com/numbers_ifg/" 
-                target="_blank" rel="noopener noreferrer" 
+              <a
+                href="https://www.instagram.com/numbers_ifg/"
+                target="_blank" rel="noopener noreferrer"
                 className="text-gray-400 hover:text-pink-500 transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a 
-                href="https://web.facebook.com/numbersifg?_rdc=1&_rdr#" 
-                target="_blank" rel="noopener noreferrer" 
+              <a
+                href="https://web.facebook.com/numbersifg?_rdc=1&_rdr#"
+                target="_blank" rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-500 transition-colors"
               >
                 <Facebook className="w-5 h-5" />
@@ -76,6 +76,11 @@ const Footer = () => {
                   Projetos
                 </Link>
               </li>
+              <li>
+                <Link to="/start" className="text-gray-400 hover:text-white transition-colors">
+                  S.T.A.R.T.
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -85,10 +90,6 @@ const Footer = () => {
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-3 text-gray-400" />
                 <span className="text-gray-400 text-sm">contato@numbers.edu.br</span>
-              </div>
-              <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-3 text-gray-400" />
-                <span className="text-gray-400 text-sm">(62) 3333-4444</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 mr-3 text-gray-400 mt-0.5 flex-shrink-0" />
@@ -100,8 +101,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-6 pt-6 text-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-gray-800 mt-6 py-4 flex justify-center items-center">
+          <p className="text-gray-400 text-sm translate-y-5">
             © 2025 NumbERS - Núcleo de Pesquisa. Todos os direitos reservados.
           </p>
         </div>

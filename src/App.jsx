@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './components/utils/ScrollToTop';
 import Navbar from './components/header/navbar';
 import PageHeader from './components/header/PageHeader';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 import Home from './pages/Home';
 import Institucional from './pages/Institucional';
 import Projetos from './pages/Projetos';
