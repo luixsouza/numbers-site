@@ -141,13 +141,13 @@ const Start = () => {
                     reais de suas comunidades.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    Proposto e coordenado pelo professor do IFG Leandro
-                    Alexandre Freitas, o Programa START é fruto de mais de dois
-                    anos de diálogo do IFG com a Secretaria de Estado de
-                    Ciência, Tecnologia e Inovação (SECTI). O programa prevê o
-                    trabalho ativo na disseminação do ensino de robótica e no
-                    desenvolvimento de software, com previsão de 3.808 vagas
-                    ofertadas.
+                    Idealizado pelo professor Dr. Leandro Alexandre Freitas e
+                    coordenado pelo professor Dr. Rogério Sousa e Silva, o
+                    Programa START é fruto de mais de dois anos de diálogo do
+                    IFG com a Secretaria de Desenvolvimento e Inovação do Estado
+                    de Goiás (SECTI). O programa prevê o trabalho ativo na
+                    disseminação do ensino de robótica e no desenvolvimento de
+                    software, com previsão de 8.000 vagas ofertadas.
                   </p>
                 </div>
                 <div className="bg-blue-50 p-6 md:p-8 rounded-2xl">
