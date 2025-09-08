@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Users, CheckCircle, Map } from "lucide-react";
+import {
+  Users,
+  CheckCircle,
+  Map,
+  BookOpen,
+  Clock,
+  Calendar,
+} from "lucide-react";
 
 const Start = () => {
   const [activeTab, setActiveTab] = useState("programa");
@@ -17,7 +24,10 @@ const Start = () => {
     "Catalão",
     "Caldas Novas",
     "Cristalina",
-    "Goiânia (4 laboratórios)",
+    "Goiânia I",
+    "Goiânia II",
+    "Goiânia III",
+    "Goiânia IV",
     "Itaberaí",
     "Itumbiara",
     "Jataí",
@@ -95,6 +105,16 @@ const Start = () => {
                   O que é o Programa?
                 </button>
                 <button
+                  onClick={() => setActiveTab("modulos")}
+                  className={`whitespace-nowrap pb-2 px-1 border-b-2 font-medium text-base md:text-lg transition-colors ${
+                    activeTab === "modulos"
+                      ? "border-blue-500 text-blue-600"
+                      : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                  }`}
+                >
+                  Módulos
+                </button>
+                <button
                   onClick={() => setActiveTab("unidades")}
                   className={`whitespace-nowrap pb-2 px-1 border-b-2 font-medium text-base md:text-lg transition-colors ${
                     activeTab === "unidades"
@@ -147,7 +167,7 @@ const Start = () => {
                     IFG com a Secretaria de Desenvolvimento e Inovação do Estado
                     de Goiás (SECTI). O programa prevê o trabalho ativo na
                     disseminação do ensino de robótica e no desenvolvimento de
-                    software, com previsão de 8.000 vagas ofertadas.
+                    software, com previsão de 8.000 vagas ofertadas.
                   </p>
                 </div>
                 <div className="bg-blue-50 p-6 md:p-8 rounded-2xl">
@@ -164,6 +184,18 @@ const Start = () => {
                         </h4>
                         <p className="text-gray-600 text-sm">
                           Em situação de vulnerabilidade.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800">
+                          Vínculo Escolar
+                        </h4>
+                        <p className="text-gray-600 text-sm">
+                          Estudantes regularmente matriculados em escolas
+                          públicas ou bolsistas integrais em escolas privadas.
                         </p>
                       </div>
                     </div>
@@ -189,6 +221,105 @@ const Start = () => {
                         </p>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === "modulos" && (
+              <motion.div
+                key="modulos"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className="text-center mb-12">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    Estrutura do Programa
+                  </h3>
+                  <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                    O programa é dividido em três ciclos de aprendizagem,
+                    permitindo uma progressão contínua de conhecimento em
+                    robótica e novas tecnologias.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8 mb-12">
+                  <div className="border border-gray-200 bg-white rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div className="bg-blue-100 rounded-full p-4 mb-5">
+                      <BookOpen className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      Módulo I
+                    </h4>
+                    <p className="text-gray-600 flex-grow">
+                      Curso de Introdução à Robótica
+                    </p>
+                  </div>
+                  <div className="border border-gray-200 bg-white rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div className="bg-blue-100 rounded-full p-4 mb-5">
+                      <BookOpen className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      Módulo II
+                    </h4>
+                    <p className="text-gray-600 flex-grow">
+                      Curso Intermediário de Robótica
+                    </p>
+                  </div>
+                  <div className="border border-gray-200 bg-white rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div className="bg-blue-100 rounded-full p-4 mb-5">
+                      <BookOpen className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      Módulo III
+                    </h4>
+                    <p className="text-gray-600 flex-grow">
+                      Tópicos Avançados em Novas Tecnologias
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-center mt-16 mb-12">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    Detalhes da Formação
+                  </h3>
+                  <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                    Cada etapa do programa foi desenhada para oferecer uma
+                    experiência de aprendizado completa e dinâmica, com uma
+                    carga horária bem distribuída.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="border border-gray-200 bg-white rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div className="bg-blue-100 rounded-full p-4 mb-5">
+                      <Clock className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      32 Horas
+                    </h4>
+                    <p className="text-gray-600 flex-grow">por módulo</p>
+                  </div>
+                  <div className="border border-gray-200 bg-white rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div className="bg-blue-100 rounded-full p-4 mb-5">
+                      <Clock className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      96 Horas
+                    </h4>
+                    <p className="text-gray-600 flex-grow">
+                      carga horária total
+                    </p>
+                  </div>
+                  <div className="border border-gray-200 bg-white rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div className="bg-blue-100 rounded-full p-4 mb-5">
+                      <Calendar className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      2 Aulas
+                    </h4>
+                    <p className="text-gray-600 flex-grow">por semana</p>
                   </div>
                 </div>
               </motion.div>
@@ -255,10 +386,10 @@ const Start = () => {
                 <div className="flex justify-center">
                   <iframe
                     title="Dashboard_v2"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiZGM1YWRkMTMtMjU4Mi00MGJjLThkZGYtZTgxYzk4MGMwM2EzIiwidCI6ImI0YjBlM2VhLTMwZjgtNGM0Yy05MmYwLWQ2MWM1ZjIyOWZjNyJ9"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiYjA4MjQ1YzItZjE3ZC00ZGQ3LTk4OWYtMTBlODc0Yzg1ZGE4IiwidCI6ImI0YjBlM2VhLTMwZjgtNGM0Yy05MmYwLWQ2MWM1ZjIyOWZjNyJ9"
                     frameBorder="0"
                     allowFullScreen={true}
-                    className="rounded-lg shadow-lg border border-gray-200 w-full h-[3000px] md:h-[3600px]"
+                    className="rounded-lg shadow-lg border border-gray-200 w-full h-[3000px] md:h-[3500px]"
                   ></iframe>
                 </div>
               </motion.div>
