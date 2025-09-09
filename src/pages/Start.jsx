@@ -7,43 +7,160 @@ import {
   BookOpen,
   Clock,
   Calendar,
+  MapPin,
+  Search,
 } from "lucide-react";
 
 const Start = () => {
   const [activeTab, setActiveTab] = useState("programa");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     document.title = "S.T.A.R.T.";
   }, []);
 
-  const cities = [
-    "Alto Paraíso de Goiás",
-    "Anápolis",
-    "Aparecida de Goiânia",
-    "Aruanã",
-    "Catalão",
-    "Caldas Novas",
-    "Cristalina",
-    "Goiânia I",
-    "Goiânia II",
-    "Goiânia III",
-    "Goiânia IV",
-    "Itaberaí",
-    "Itumbiara",
-    "Jataí",
-    "Luziânia",
-    "Mambaí",
-    "Mozarlândia",
-    "Pirenópolis",
-    "Porangatu",
-    "Rio Verde",
-    "Santo Antônio do Descoberto",
-    "São Luís de Montes Belos",
-    "São Miguel do Araguaia",
-    "Trindade",
-    "Uruana",
-    "Valparaíso de Goiás",
+  const unidades = [
+    {
+      name: "Alto Paraíso de Goiás",
+      locationName: "Centro de Convivência da Juventude",
+      address: "Rua 12 de dezembro - Praça Centro Administrativo",
+    },
+    {
+      name: "Anápolis",
+      locationName:
+        "UEG - Câmpus Anápolis de Ciências Socioeconômicas e Humanas",
+      address: "Av. Juscelino Kubitschek, 146 - Jundiaí, Anápolis - GO",
+    },
+    {
+      name: "Aparecida de Goiânia",
+      locationName: "Colégio Estadual Jardim Tiradentes",
+      address: "R. 13 QD. APM-4, S/N - Jardim Tiradentes",
+    },
+    {
+      name: "Aruanã",
+      locationName: "Local a definir",
+      address: "Endereço a ser confirmado",
+    },
+    {
+      name: "Catalão",
+      locationName: "Colégio Estadual João Netto Campos",
+      address: "Praça do Estudante Ns - Mãe de Deus",
+    },
+    {
+      name: "Caldas Novas",
+      locationName: "Local a definir",
+      address: "Endereço a ser confirmado",
+    },
+    {
+      name: "Cristalina",
+      locationName: "Colégio Estadual Adelvina Flores Ribeiro",
+      address: "Rua Meier esq. com Av. Botafogo, S/N, Quadra 20",
+    },
+    {
+      name: "Goiânia I",
+      locationName: "Colégio Estadual Ronaldo Ramos Caiado Filho",
+      address: "R. Jc 504 Qd9, 0 - Res. Jardins Do Cerrado 9",
+    },
+    {
+      name: "Goiânia II",
+      locationName: "Centro de Educação Comunitária de Meninos e Meninas",
+      address: "R. Quinze, 293 - St. Santos Dumont",
+    },
+    {
+      name: "Goiânia III",
+      locationName: "C. E. Jornalista Luiz Gonzaga Contart",
+      address: "R. GB-4 - Jardim Guanabara II",
+    },
+    {
+      name: "Goiânia IV",
+      locationName: "OVG Centro da Juventude Tecendo o Futuro",
+      address:
+        "Avenida Cristóvão Colombo com, R. Managua, s/nº - Jardim Novo Mundo",
+    },
+    {
+      name: "Itaberaí",
+      locationName: "Local a definir",
+      address: "Endereço a ser confirmado",
+    },
+    {
+      name: "Itumbiara",
+      locationName: "Local a definir",
+      address: "Endereço a ser confirmado",
+    },
+    {
+      name: "Jataí",
+      locationName: "IFG Jataí",
+      address: "R. Riachuelo, 2090 - Divino Espírito Santo",
+    },
+    {
+      name: "Luziânia",
+      locationName: "IFG Luziânia",
+      address: "Rua São Bartolomeu, s/n, Vila Esperança",
+    },
+    {
+      name: "Mambaí",
+      locationName: "Colégio Estadual Sebastião Moreira Da Silveira",
+      address: "Av. Castelo Branco - Centro",
+    },
+    {
+      name: "Mozarlândia",
+      locationName: "Local a definir",
+      address: "Endereço a ser confirmado",
+    },
+    {
+      name: "Pirenópolis",
+      locationName: "Colégio Estadual Senhor do Bonfim",
+      address:
+        "Rua Joaquim Augusto Curado, S/N QD. 63 LT. 28 - Vila Alto do Bonfim",
+    },
+    {
+      name: "Porangatu",
+      locationName: "Colégio Estadual Presidente Kennedy",
+      address: "Rua 16 Esquina com a Rua 2, Centro",
+    },
+    {
+      name: "Rio Verde",
+      locationName: "Colégio Estadual Eurico Veloso do Carmo",
+      address: "Rua Seringueira, sn - Residencial Arco Íris",
+    },
+    {
+      name: "Santo Antônio do Descoberto",
+      locationName: "Local a definir",
+      address: "Endereço a ser confirmado",
+    },
+    {
+      name: "São Luís de Montes Belos",
+      locationName: "Colégio Estadual Presidente Costa e Silva",
+      address: "Rua Rio Claro, nº 1.127, Centro",
+    },
+    {
+      name: "São Miguel do Araguaia",
+      locationName: "Colégio Estadual de São Miguel do Araguaia",
+      address: "RUA 6, 932 Setor Eliziario",
+    },
+    {
+      name: "Trindade",
+      locationName: "Escola Estadual 16 de Julho",
+      address: "Rua 02, 174 Vila Augustus",
+    },
+    {
+      name: "Uruana",
+      locationName: "Colégio Estadual Zico Monteiro",
+      address: "Avenida Brasil Leste, Nº 1315 - Centro",
+    },
+    {
+      name: "Valparaíso de Goiás",
+      locationName: "Casa da Cultura Mestre Sabá",
+      address: "Rua 65 Qd. 87 2ª Etapa - Jardim Céu Azul",
+    },
   ];
+
+  const filteredUnidades = unidades.filter(
+    (unidade) =>
+      unidade.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      unidade.locationName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      unidade.address.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const headerImage =
     activeTab === "dados"
@@ -341,18 +458,48 @@ const Start = () => {
                     22 municípios, distribuídos por todo o estado de Goiás.
                   </p>
                 </div>
-                <div className="bg-gray-50 p-6 md:p-8 rounded-2xl mb-12">
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3 text-gray-700">
-                    {cities.map((city) => (
-                      <li
-                        key={city}
-                        className="flex items-center text-sm md:text-base"
+
+                <div className="mb-8 relative max-w-lg mx-auto">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <Search className="w-5 h-5 text-gray-400" />
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Buscar por cidade, local ou endereço..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                  {filteredUnidades.length > 0 ? (
+                    filteredUnidades.map((unidade) => (
+                      <div
+                        key={unidade.name}
+                        className="border border-gray-200 bg-white rounded-2xl p-6 flex flex-col hover:shadow-lg transition-shadow duration-300"
                       >
-                        <Map className="w-4 h-4 mr-2 text-blue-500 flex-shrink-0" />
-                        {city}
-                      </li>
-                    ))}
-                  </ul>
+                        <div className="flex items-center mb-3">
+                          <MapPin className="w-6 h-6 mr-3 text-blue-600 flex-shrink-0" />
+                          <h4 className="text-lg font-bold text-gray-900">
+                            {unidade.name}
+                          </h4>
+                        </div>
+                        <div className="pl-9">
+                          <p className="text-gray-700 font-semibold text-sm">
+                            {unidade.locationName}
+                          </p>
+                          <p className="text-gray-500 text-sm">
+                            {unidade.address}
+                          </p>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-center text-gray-500 col-span-full">
+                      Nenhuma unidade encontrada.
+                    </p>
+                  )}
                 </div>
                 <img
                   src="/images/Mapa-START.jpg"
