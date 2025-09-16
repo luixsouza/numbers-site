@@ -62,22 +62,29 @@ const EditalCard = ({ edital }) => (
         </div>
       </div>
       <div className="mt-6 md:mt-0 flex-shrink-0 flex flex-col space-y-3">
-        {edital.links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center justify-center w-full md:w-auto px-6 py-3 font-semibold rounded-lg transition-colors ${
-              link.primary
-                ? "text-white bg-blue-600 hover:bg-blue-700 shadow-sm"
-                : "text-blue-700 bg-white border border-blue-300 hover:bg-blue-100"
-            }`}
-          >
-            {link.text}
-            <ExternalLink className="w-4 h-4 ml-2" />
-          </a>
-        ))}
+        {edital.links.map((link) => {
+          const isInscricao = link.text.toLowerCase().includes("inscreva");
+          const isFinalizado = edital.status === "finalizado";
+          const disabledClass = isInscricao && isFinalizado
+            ? "pointer-events-none bg-gray-100 text-gray-400 border border-gray-200 shadow-none"
+            : link.primary
+              ? "text-white bg-blue-600 hover:bg-blue-700 shadow-sm"
+              : "text-blue-700 bg-white border border-blue-300 hover:bg-blue-100";
+          return (
+            <a
+              key={link.href}
+              href={isInscricao && isFinalizado ? undefined : link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center justify-center w-full md:w-auto px-6 py-3 font-semibold rounded-lg transition-colors ${disabledClass}`}
+              tabIndex={isInscricao && isFinalizado ? -1 : 0}
+              aria-disabled={isInscricao && isFinalizado}
+            >
+              {link.text}
+              <ExternalLink className="w-4 h-4 ml-2" />
+            </a>
+          );
+        })}
       </div>
     </div>
   </div>
