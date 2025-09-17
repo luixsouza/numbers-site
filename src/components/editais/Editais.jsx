@@ -107,7 +107,7 @@ const Editais = () => {
       className="mt-8 md:mt-12"
     >
       <div className="mb-8 bg-white pb-2">
-        <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-16">
+        <div className="max-w-7xl mx-auto px-0 md:px-8">
           <img
             src="/images/banner-inscricoes-START.jpg"
             alt="Banner de inscrições para o programa START"

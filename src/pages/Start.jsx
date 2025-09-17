@@ -345,26 +345,26 @@ const Start = () => {
         </div>
       </section>
       <section className="bg-white pt-8 pb-16 md:pt-12 md:pb-20">
-        <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-16">
-          <a
-            href="https://goias.gov.br/inovacao/start/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block"
-          >
-            <img
-              src="/images/Banner-IFG-START.png"
-              alt="Banner de parceria entre IFG e o programa START"
-              className="w-full h-auto bg-white rounded-2xl"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src =
-                  'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="380"><rect width="100%" height="100%" fill="white"/></svg>';
-              }}
-            />
-          </a>
-        </div>
-      </section>
+      <div className="max-w-7xl mx-auto px-0 md:px-8">
+        <a
+          href="https://goias.gov.br/inovacao/start/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
+          <img
+            src="/images/Banner-IFG-START.png"
+            alt="Banner de parceria entre IFG e o programa START"
+            className="w-full h-auto bg-white rounded-2xl"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src =
+                'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="380"><rect width="100%" height="100%" fill="white"/></svg>';
+            }}
+          />
+        </a>
+      </div>
+    </section>
     </motion.div>
   );
 };

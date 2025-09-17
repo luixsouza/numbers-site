@@ -19,6 +19,7 @@ const Unidades = () => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
+      className="mt-8 md:mt-12"
     >
       <div className="text-center mb-12">
         <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
