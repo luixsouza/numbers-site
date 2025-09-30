@@ -65,9 +65,10 @@ const EditalCard = ({ edital }) => (
         {edital.links.map((link) => {
           const isInscricao = link.text.toLowerCase().includes("inscreva");
           const isFinalizado = edital.status === "finalizado";
-          const disabledClass = isInscricao && isFinalizado
-            ? "pointer-events-none bg-gray-100 text-gray-400 border border-gray-200 shadow-none"
-            : link.primary
+          const disabledClass =
+            isInscricao && isFinalizado
+              ? "pointer-events-none bg-gray-100 text-gray-400 border border-gray-200 shadow-none"
+              : link.primary
               ? "text-white bg-blue-600 hover:bg-blue-700 shadow-sm"
               : "text-blue-700 bg-white border border-blue-300 hover:bg-blue-100";
           return (
