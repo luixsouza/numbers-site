@@ -6,11 +6,11 @@ export const editaisData = [
     description:
       "Processo seletivo para o Curso de Introdução à Robótica (32h) - FINALIZADO.",
     details: [
-      { label: "Inscrição", value: "10 a 23 de Setembro" },
+      { label: "Inscrição", value: "10 a 26 de Setembro" },
       { label: "Vagas", value: "820" },
-      { label: "Resultados", value: "24 de Setembro" },
-      { label: "Matrícula", value: "25 a 30 de Setembro" },
-      { label: "Início das aulas", value: "01 de Outubro" },
+      { label: "Resultados", value: "29 de Setembro" },
+      { label: "Matrícula", value: "30 de Setembro a 3 de Outubro" },
+      { label: "Início das aulas", value: "6 de Outubro" },
       { label: "Status", value: "Inscrições Fechadas", isStatus: true },
     ],
     links: [
