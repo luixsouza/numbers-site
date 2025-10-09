@@ -30,7 +30,7 @@ export const editaisData = [
   {
     id: 2,
     status: "vigente",
-    title: "Edital de Chamada Pública Nº 03/2025 - Módulo I (Iniciante)",
+    title: "Edital de Chamada Pública Nº 03/2025 - Senador Canedo - Módulo I (Iniciante)",
     description:
       "Inscrições abertas para o Curso de Introdução à Robótica (32h)",
     details: [

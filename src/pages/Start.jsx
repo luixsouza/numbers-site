@@ -150,7 +150,7 @@ const Start = () => {
                     IFG com a Secretaria de Desenvolvimento e Inovação do Estado
                     de Goiás (SECTI). O programa prevê o trabalho ativo na
                     disseminação do ensino de robótica e no desenvolvimento de
-                    software, com previsão de 8.000 vagas ofertadas.
+                    software.
                   </p>
                 </div>
                 <div className="bg-blue-50 p-6 md:p-8 rounded-2xl">
