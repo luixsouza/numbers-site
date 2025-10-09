@@ -16,6 +16,7 @@ const Start = () => {
 
   useEffect(() => {
     document.title = "S.T.A.R.T.";
+    console.log(document.title)
   }, []);
 
   const headerImage =
